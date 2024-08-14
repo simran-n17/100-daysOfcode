@@ -1,0 +1,17 @@
+package Coding;
+import java.util.*;
+public class HasDuplicate {
+	 public static boolean hasDuplicate(int[] nums) {
+		 Set<Integer> set=new HashSet<>();
+		 for(int i:nums) {
+			 set.add(i);
+		 }
+		 if(nums.length==set.size()) return false;
+		 else return true;
+	    }
+	public static void main(String[] args) {
+		int[] nums= {1,2,3,4};
+		boolean result=hasDuplicate(nums);
+		System.out.println(result);
+	}
+}
