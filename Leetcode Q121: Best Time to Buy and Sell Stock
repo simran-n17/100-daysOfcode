@@ -1,0 +1,20 @@
+package Coding;
+
+public class BestTimeToBuyAndSell {
+	 public static int maxProfit(int[] prices) {
+	        int buy=prices[0];
+	        int maxProfit=0;
+	        int i=1;
+	        while(i<prices.length){
+	            if(buy>prices[i]) buy=prices[i];
+	            else if(prices[i]-buy>maxProfit) maxProfit=prices[i]-buy;
+	            i++;
+	        }
+	        return maxProfit;
+	    }
+	public static void main(String[] args) {
+		int[] prices= {10,1,5,6,7,1};
+		int result=maxProfit(prices);
+		System.out.println(result);
+	}
+}
