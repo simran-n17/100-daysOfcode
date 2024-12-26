@@ -1,0 +1,20 @@
+class Solution {
+    public int pivotInteger(int n) {
+        int[] left=new int[n];
+        int[] right=new int[n];
+        int sum1=0;
+        for(int i=1;i<=n;i++){
+            left[i-1]=sum1;
+            sum1+=i;
+        }
+        int sum2=0;
+        for(int i=n;i>=1;i--){
+            right[i-1]=sum2;
+            sum2+=i;
+        }
+        for(int i=1;i<=n;i++){
+            if(left[i-1]==right[i-1]) return i;
+        }
+        return -1;
+    }
+}
