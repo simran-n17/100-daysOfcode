@@ -1,0 +1,22 @@
+class Solution {
+    public int pivotIndex(int[] nums) {
+        int[] leftArray=new int[nums.length];
+        int sum1=0;
+        int[] rightArray=new int[nums.length];
+        int sum2=0;
+        for(int i=0;i<nums.length;i++){
+            leftArray[i]=sum1;
+            sum1+=nums[i];
+        }
+        for(int i=nums.length-1;i>=0;i--){
+            rightArray[i]=sum2;
+            sum2+=nums[i];
+        }
+        for(int i=0;i<nums.length;i++){
+            if(leftArray[i]==rightArray[i]){
+                return i;
+            }
+        }
+        return -1;
+    }
+}
